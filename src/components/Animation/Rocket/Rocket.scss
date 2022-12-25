@@ -1,0 +1,183 @@
+body{
+    background:#000000;
+  }
+  .rocket{
+    width:50px;
+    top:25%;
+    position:absolute;
+    margin:0 auto;
+    left:0;
+    right:0;
+    animation:vibrate 0.3s ease infinite;
+    svg{
+      width:50px;
+      fill:#fff;
+      .fire{
+        transition:all ease-in-out 1s;
+        stroke:#fff;
+        &.first{
+          stroke-dasharray:100;
+          stroke-dashoffset:0;
+          
+          animation:dash 0.2s ease infinite;
+        }
+        &.second {
+          stroke-dasharray:200;
+          stroke-dashoffset:0;
+          animation:dash2 0.2s ease infinite;
+        }
+        &.third{
+          stroke-dasharray:85;
+          stroke-dashoffset:0;
+          
+          animation:dash 0.2s ease infinite;
+        }
+      }
+    }
+  }
+  .sky {
+    transform:rotate(45deg);
+  }
+  .star {
+      position: absolute;
+      width: 4px;
+      height: 10px;
+      background:#fff;
+    border-radius:25px;
+      z-index: 2;
+      animation :skyspace 0.5s ease infinite;
+      &.star1 {
+          right: -60px;
+          top: -30px;
+          animation-delay:0.10s;
+      }
+      &.star2 {
+          right: 30px;
+          top: 30px;
+          animation-delay:0.10s;
+      }
+      &.star3 {
+          top: -40px;
+          left: 45px;
+          animation-delay:0.2s;
+      }
+      &.star4 {
+          top: -20px;
+          right: 75px;
+          animation-delay:0.2s;
+      }
+      &.star5 {
+          right: -35px;
+          top: -60px;
+          animation-delay:0.30s;
+      }
+      &.star6 {
+          right: 160px;
+          top: 50px;
+          animation-delay:0.40s;
+      }
+      &.star7 {
+          top: 20px;
+          left: 75px;
+          animation-delay:0.3s;
+      }
+      &.star8 {
+          top: -30px;
+          right: 95px;
+          animation-delay:0.4s;
+      }
+      &.star9 {
+          right: 30px;
+          top: -60px;
+          animation-delay:0.30s;
+      }
+      &.star10 {
+          right: 160px;
+          top: 50px;
+          animation-delay:0.40s;
+      }
+      &.star11 {
+          top: 20px;
+          left: 75px;
+          animation-delay:0.3s;
+      }
+      &.star12 {
+          top: -30px;
+          right: 95px;
+          animation-delay:0.4s;
+      }
+  
+      &.star13 {
+          right: -90px;
+          top: -100px;
+          animation-delay:0.30s;
+      }
+      &.star14 {
+          right: -20px;
+          top: 50px;
+          animation-delay:0.40s;
+      }
+      &.star15 {
+          top: 20px;
+          right: -65px;
+          animation-delay:0.3s;
+      }
+      &.star16 {
+          top: -30px;
+          right: -25px;
+          animation-delay:0.4s;
+      }
+  }
+  
+  @-webkit-keyframes dash{
+    0%{
+      stroke-dashoffset:50;
+    }
+    50% {
+      stroke-dashoffset:70;
+    }
+    80%{
+      stroke-dashoffset:60;
+    }
+    100%{
+      stroke-dashoffset:50;
+    }
+  }
+  @-webkit-keyframes dash2{
+    0%{
+      stroke-dashoffset:100;
+    }
+    50% {
+      stroke-dashoffset:120;
+    }
+    80%{
+      stroke-dashoffset:110;
+    }
+    100%{
+      stroke-dashoffset:100;
+    }
+  }
+  
+  
+  @keyframes vibrate {
+      0%   { 
+          transform:translate(0,0) ;
+      }
+      50%   { 
+          transform:translate(-1px,1px) ;
+      }
+      100% { 
+          transform:translate(0,0);
+      }
+  }
+  
+  @keyframes skyspace {
+      0%   { 
+          transform:translate(0,-200px) scale(1,0);
+          opacity: 0.8;
+      }
+      100% { 
+          transform:translate(0,300px) scale(1,2);
+          opacity: 0;
+      }
+  }

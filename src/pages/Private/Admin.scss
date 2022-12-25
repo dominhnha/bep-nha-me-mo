@@ -1,0 +1,11 @@
+@import "../../sass/variables";
+@import "../../sass/mixin";
+@import "../../sass/base";
+
+
+.Admin{
+    display: flex;
+    &__view{
+        width: 100%;
+    }
+}

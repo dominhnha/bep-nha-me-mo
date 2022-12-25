@@ -1,0 +1,148 @@
+@import "../../sass/mixin";
+@import "../../sass/variables";
+@import "../../sass/base";
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    //padding: 40px;
+    @include mobile{
+        
+        padding: 0 10px;
+    }
+}
+
+.center h1{
+    text-align: center;
+    padding:1px 0 64px 0;
+    font-size: 33px;
+    font-weight:700;
+}
+
+.sign-in-form {
+    max-width: 500px;
+    width: 100%;
+    @include mobile{
+        width: 100%;
+    }
+}
+
+.sign-in-form .input-container {
+    position: relative;
+    border-bottom: 2px solid $txt-color;
+    margin: 35px 0;
+}
+
+.input-container input {
+    width: 500px;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 16px;
+    border: none;
+    background: none;
+    outline: none;
+    @include mobile{
+        width: 100vw;
+    }
+}
+.input-container label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    color: $txt-color;
+    transform: translateY(-50%);
+    font-size: 16px;
+    pointer-events: none;
+    transition: .5s;
+   
+    @include mobile{
+        font-size: 14px;
+    }
+}
+.border-null{
+    border: none !important;
+    box-shadow: none !important;
+}
+.input-container span::before{
+    content: '';
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 0%;
+    height:2px;
+
+
+}
+.input-container input:focus ~ label,
+.input-container input:valid ~ label {
+    top: -5px;
+}
+.error-message {
+    position: absolute;
+    top: 45px;
+    left: 5px;
+    color: red;
+    @include mobile{
+        font-size: 12px;
+    }
+    &.active{
+        top:40px;
+    }
+}
+
+button[type="submit"]{
+    width: 100%;
+    height: 53px;
+    background-color: $secondary-color;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.forget-password {
+    margin-top: 13px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 16px;
+    
+}
+.forget-password a {
+    color: $primary-color;
+}
+
+.forget-password:hover{
+    text-decoration: underline;
+}
+a{
+    display: block;
+}
+.tabs {
+  display: flex;
+  background-color: #eee;
+  border-radius: 8px;
+  padding: 5px;
+  justify-content: space-between;
+}
+
+.tabs .tab-item.active {
+  transition: all 1s ease;
+  color: $secondary-color;
+  background-color: #ff8b04;
+  width: 50%;
+}
+
+.tabs .tab-item {
+    background-color: transparent;
+    width: 50%;
+    white-space: nowrap;
+    padding: 10px 15px;
+    cursor: pointer;
+    color: #999;
+    font-weight: 500;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: inherit;
+}

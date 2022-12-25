@@ -1,0 +1,104 @@
+.ProductCand{
+    overflow: hidden;
+    border-radius: 8px;
+    cursor: pointer;
+    max-width: 450px;
+    display: block;
+    &:hover{
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    }
+    &__top{
+        overflow: hidden;
+        position: relative;
+        height: 352px;
+        z-index: 1;
+    }
+    &__img{
+        position: absolute;
+        z-index: 1;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+    &__title{
+        
+        //height: 34px;
+        padding: 10px;
+        font-size: 15px;
+        font-weight: 600;
+        color: #ffffff;
+        line-height: 18px;
+        width: 92%;
+        text-transform: uppercase;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        text-overflow: ellipsis;
+       
+        
+        
+        // display: -webkit-box;
+        // -webkit-line-clamp: 2;
+        // -webkit-box-orient: vertical;   
+    }
+    &__content{
+        border-top-right-radius: 50px;
+        background-color: black;
+        position: absolute;
+        z-index: 3;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        color: white;
+        transition: all 0.5s ease;
+    }
+    
+    &__bottom{
+       
+        //background-color: #ff8b04 !important;
+        &__warpper{
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 5px 10px;
+        }
+    }
+    &__price{
+        color: #e70303;
+        font-weight: 600;
+        font-size: medium;
+    }
+    &__price--sale{
+        color: #fff;
+        font-weight: 600;
+        text-decoration: line-through;
+    }
+    &__warpper{
+        transition:height  0.5s ease;
+        height: 0px;
+        padding: 5px 10px;
+    }
+    &__desc{
+        opacity: 0;
+        //height: 0px;
+        padding: 2px 5px;
+        font-size: 12px;
+        text-align: justify;
+    }
+    &__content:hover > &__warpper{
+        height:150px !important;
+        transition:height 0.5s ease ;
+       
+
+    }
+    &__content:hover &__desc{
+        transition: all 1s ease;
+        opacity: 1;
+    }
+    &__content:hover > &__title{
+        white-space: unset;
+    }
+}

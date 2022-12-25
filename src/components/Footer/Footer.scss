@@ -1,0 +1,114 @@
+@import "../../sass/variables";
+.footer{
+    position: relative;
+    z-index: 3;
+    background-color: white;
+    padding: 20px;
+    &__cand{
+        padding-bottom: 10px;
+        
+    }
+    // 
+    &__title{
+        font-size: 18px;
+        font-weight: 600;
+        padding-bottom: 10px;
+        position: relative;
+        &::before{
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 54px;
+            border-bottom: 2px solid #000000;
+        }
+    }
+    &__desc,
+    &__adress{
+        font-size: 14px;
+        font-weight: 500;
+        display: block;
+        margin-top: 10px;
+        padding: 7px 0;
+        line-height: 17px;
+    }
+    &__address{
+        p{
+            margin-top: 5px;
+            font-size: 12px;
+        }
+    }
+    &__contact{
+        display: block;
+        color: #000000;
+
+    }
+    // link 
+    &__link{
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        padding: 10px 0;
+        color: $primary-color;
+        &:hover{
+            color: #ccc;
+            transition: all 0.2s ease;
+        }
+        i{
+            font-size: 15px;
+            font-weight: 400;
+            margin:0 5px;
+        }
+    }
+    &__link:nth-child(1){
+        margin-top: 10px;
+    }
+    // page
+    &__img{
+        margin-top: 10px;
+        display: block;
+        object-fit:cover;
+        border-radius:8px;
+        overflow: hidden;
+        
+    }
+    &__from{
+        display: flex;
+        align-items: stretch;
+        height: 40px;
+        input{
+            width: 70%;
+            border: 1px solid black;
+            border-top-left-radius:8px;
+            border-bottom-left-radius:8px;
+            padding: 5px;
+        }
+        button{
+            width: 30%;
+            background-color: black;
+            color: white;;
+            border-top-right-radius:8px;
+            border-bottom-right-radius:8px;
+        }
+    }
+    &__copyright{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__paymet{
+        display: flex;
+
+        li{
+            padding:0 10px;
+            img{
+                width: 20px;
+                height: 20px;
+            }
+        }
+        
+    }
+
+
+  
+}

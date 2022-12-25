@@ -1,0 +1,284 @@
+@import "../../sass/variables";
+@import "../../sass/mixin";
+
+
+
+.Payment{
+    min-height: 90vh;
+    &__container{
+        display: flex;
+        gap: 20px;
+        @include mobile{
+            flex-direction: column;
+        }
+    }
+    &__infomation{
+        width: 40%;
+        @include mobile{
+            width: 100%;
+        }
+    }
+    &__Product{
+        width: 60%;
+        @include mobile{
+            width: 100%;
+        }
+    }
+    &__infomation{
+
+    }
+    &__Product{
+        &__404{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            h2{
+                
+            font-size: 16px;
+            font-weight: 400;
+            color: #000;
+           
+            
+            padding: 10px;
+            }
+            a{
+                font-size: 14px;
+            font-weight: 600;
+            color: #000;
+           
+            
+            padding: 10px;
+            }
+        }
+        &__list{
+            height: 500px;
+            max-height: 500px;
+            overflow-x: hidden;
+            overflow-y: auto;
+            padding: 10px;
+
+            &::-webkit-scrollbar {
+                width: 10px;
+            }
+            &::-webkit-scrollbar-track {
+                background-color: #e4e4e4;
+                border-radius: 100px;
+            }
+            &::-webkit-scrollbar-thumb {
+                background-color: #ff8b04;
+                border-radius: 100px;
+            }
+        
+        }
+        &__item{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            margin-bottom: 5px;
+            padding: 5px;
+            border-radius: 8px;
+            min-height: 150px;
+           box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        }
+        &__wrapper{
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 10px;
+            max-width: 80%;
+            overflow: hidden;
+        }
+        &__img{
+            min-width: 100px;
+            min-height: 100px;
+            @include mobile{
+                display: none;
+            }
+            img{
+                width: 100px;
+                height: 100px;
+                object-fit: cover;
+                border-radius: 8px;
+                margin: 10px;
+                margin-right: auto;
+                cursor: default;
+            outline: none;
+            }
+        }
+        &__content{
+            p{
+                font-size: 16px;
+                color: rgb(85, 85, 85);
+                font-weight: 700;
+                text-transform: uppercase;
+            }
+            h2{
+                font-size: 20px;
+                color: rgb(85, 85, 85);
+                font-weight: 700;
+                text-transform: uppercase;
+            }
+            @include mobile{
+                p{
+                    font-size: 10px;
+                }
+                h2{
+                    font-size: 13px;
+                }
+            }
+        }
+        &__price{
+            //margin-left: auto;
+            font-size: 16px;
+            color: rgb(85, 85, 85);
+            font-weight: 700;
+            text-transform: uppercase;
+            p{
+                color: #ff8b04;;
+            }
+        }
+    }
+   &__total{
+        display: flex;
+        gap: 20px;
+        justify-content: flex-end;
+        @include mobile{
+            flex-direction: column;
+            justify-content: center;
+            &__button{
+                button{
+                    margin: 0 auto;
+                }
+            }
+        }
+        h2{
+            font-size: 16px;
+            color: rgb(85, 85, 85);
+            font-weight: 700;
+            text-transform: uppercase;
+            margin: 10px;
+        }
+        span{
+            font-size: 16px;
+            color: #ff8b04;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin: 10px;
+            min-width: 100px;
+            text-align: center;
+        }
+        &__warpper{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+   }
+}
+
+
+
+
+
+.css-1s2u09g-control{
+    
+}
+.css-1s2u09g-control{
+    border: 1px solid #ccc !important;
+}
+.css-1pahdxg-control{
+    border-color: aqua;
+}
+//css input 
+.sign-in-form {
+    @include mobile{
+        width: 100%;
+    }
+}
+.border--active{
+    border-bottom: 2px solid $txt-color;
+}
+.input-container {
+    position: relative;
+    margin: 35px 0;
+}
+
+.input-container input {
+    width: 100%;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 16px;
+    border: none;
+    background: none;
+    outline: none;
+    @include mobile{
+        width: 100%;
+    }
+}
+.input-container label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    color: $txt-color;
+    transform: translateY(-50%);
+    font-size: 16px;
+    pointer-events: none;
+    transition: .5s;
+    @include mobile{
+        font-size: 14px;
+    }
+}
+.input-container span::before{
+    content: '';
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 0%;
+    height:2px;
+
+
+}
+.input-container input:focus ~ label,
+.input-container input:valid ~ label {
+    top: -5px;
+}
+.Payment__group .error-message {
+    position: absolute;
+    top: 45px;
+    left: 5px;
+    color: red;
+    @include mobile{
+        font-size: 12px;
+    }
+}
+
+button[type="submit"]{
+    width: 100%;
+    height: 53px;
+    background-color: $secondary-color;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+}
+.forget-password {
+    margin-top: 13px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 16px;
+    
+}
+.forget-password a {
+    color: $primary-color;
+}
+
+.forget-password:hover{
+    text-decoration: underline;
+}
+.active__error{
+    top: 65px;
+}
+.active__error__xl {
+    top: 65px !important;
+}

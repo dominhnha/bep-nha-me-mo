@@ -1,0 +1,132 @@
+.Chart {
+    display: flex;
+    gap: 20px;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 8px;
+    
+
+    .Colection {
+        width: 30%;
+        max-height: 85vh;
+        overflow: hidden;
+    }
+
+    &__view {
+        width: 70%;
+    }
+    
+    &__title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+
+        & i {
+            transition: all 0.5s ease;
+            border-radius: 50%;
+            padding: 10px;
+
+
+        }
+
+        &.active {
+            i {
+                transition: all 0.5s ease;
+                background-color: #FF8B04;
+                color: white;
+            }
+        }
+
+        &:hover {
+            i {
+                transition: all 0.5s ease;
+                background-color: #FF8B04;
+                color: white;
+            }
+        }
+    }
+
+   
+}
+
+.Colection__chart {
+    // max-height: 88vh;
+    width: 30%;
+    &__list {
+        max-height: 89vh !important;
+        padding: 10px;
+        overflow-y: auto;
+
+        &::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background-color: #e4e4e4;
+            border-radius: 100px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: #FF8B04;
+            border-radius: 100px;
+        }
+    }
+
+    &__item {
+        padding: 10px 10px;
+        border-radius: 8px;
+        margin: 8px 0px;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        transition: all 0.5s ease;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column!important;
+
+        p {
+            font-size: 12px;
+            color: rgb(122, 121, 121);
+        }
+
+        h2 {
+            font-size: 16px;
+            color: rgb(0, 0, 0);
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        &:hover {
+            transition: all 0.5s ease;
+            background-color: #FF8B04;
+            color: white;
+
+            p {
+
+                color: rgb(255, 255, 255);
+            }
+
+            h2 {
+
+                color: rgb(255, 255, 255);
+
+            }
+        }
+
+        &.active {
+            transition: all 0.5s ease;
+            background-color: #FF8B04;
+            color: white;
+
+            p {
+
+                color: rgb(255, 255, 255);
+            }
+
+            h2 {
+
+                color: rgb(255, 255, 255);
+
+            }
+        }
+    }
+}

@@ -1,0 +1,241 @@
+@import "../../sass/variables";
+@import "../../sass/mixin";
+@import "../../sass/base";
+
+.SideBar{
+    padding: 40px 24px;
+    background-color:#ffffff;
+    min-height: 100vh;
+    width: 300px;
+    color: white;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    position: relative;
+    transition: all 0.5s ease;
+    z-index: 1;
+    &.active{
+        transition: all 0.5s ease;
+        width: 110px; 
+        padding: 40px 5px;
+
+    }
+
+    &__logo{
+        padding-bottom:20px;
+        // border-bottom:1px solid #ccc ;
+        
+        a{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        img{
+            max-width: 70px;
+            display: block;
+            @include mobile{
+                max-width: 100px;
+            }
+        }
+        h2{
+            font-size: 20px;
+            font-weight: 550;
+            text-transform: uppercase;
+            color: rgb(0, 0, 0);
+            visibility: visible;
+            transition: all 3s ease;
+            opacity: 1;
+            white-space: nowrap;
+           &.active{
+                visibility: hidden;
+                transition: all 0.00001s ease;
+                //display: none;
+                opacity: 0;
+               width: 0px;
+           } 
+        }
+        @include mobile{
+            h2{
+                display: none;
+            }
+        }
+        
+    }
+    &__info{
+        padding: 10px;
+        display: flex;
+            align-items: center;
+            gap: 10px;
+            border-radius: 8px;
+            border: 2px solid #ccc;
+            transition: all 1s ease;
+         &__content{
+            
+            font-weight: 350;
+            color: rgb(0, 0, 0);
+
+            h2{
+                text-transform: uppercase;
+                font-size: 16px;
+                font-weight: 600;
+                visibility: visible;
+                transition: all 0.3s ease;
+                opacity: 1;
+                white-space: nowrap;
+            //     &.active{
+            //         visibility: hidden;
+            //         transition: all 0.00001s ease;
+            //         //display: none;
+            //         opacity: 0;
+            //         height: 0px;
+                  
+            //    } 
+            }
+
+         }  
+         &__status{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            span{
+                width: 15px;
+                height: 15px;
+                background-color: rgb(7, 209, 91);
+                display: block;
+                border-radius: 50%;
+                
+            }
+            p{
+                font-size: 13px;
+                color: rgb(146, 146, 146);
+            }
+        //     &.active{
+        //         justify-content: center ;
+              
+        //    } 
+         } 
+         &__list{
+            margin: 20px 0px;
+            border: 2px solid #ccc;
+            padding: 10px;
+            border-radius:8px ;
+            &.active{
+                padding: 5px; 
+                transition: all 0.5s ease;   
+            }
+         }
+         &__title{
+                font-size: 16px;
+                font-weight: 550;
+                text-transform: uppercase;
+                color: rgb(0, 0, 0);
+                display: block;
+                padding: 10px;
+                margin:20px;
+                border-radius: 8px;
+                transition: all 1s ease;
+                box-shadow: rgb(0 0 0 / 25%) -3px 3px 1px 0px;
+                visibility: visible;
+                &.active{
+                   font-size: small;
+                   padding: 0; 
+                   margin:20px 0;
+                    box-shadow: none;
+                    transition: all 0.5s ease;
+                }
+                
+         }
+         &__item{
+            color: black;
+            padding: 10px 5px;
+            margin: 5px;
+            border-radius: 8px;
+            cursor: pointer;
+            a{
+                display: flex;
+                //align-items: center;
+
+                
+            }
+            i{
+                font-size: 20px;
+                padding:0 10px;
+                max-width: 70px; 
+            }
+            a{
+                color: black;
+            }
+            &.active{
+                padding: 10px 0px;
+                margin: 0px;
+                i{
+                    padding:0 5px;
+                }
+                a{
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 30px;
+                }
+                span{
+                    &.active{
+                        visibility: hidden;
+                        transition: all 0.00001s ease;
+                        //display: none;
+                        opacity: 0;
+                       width: 0px;
+                   } 
+                }
+            }
+            &:hover{
+                transition: all 0.3s ease;
+                background-color: #FF8B04;
+                color: white;
+                a{
+                    color: white;
+                }
+            }
+
+         }
+         &.active{
+            flex-direction: column;
+            padding: 10px 0;
+            h2{
+                font-size: small;
+                font-weight: 500;
+               
+            }
+         }
+
+    }
+    &__bottom{
+        position: absolute;
+        z-index: 3;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        i{
+            display: block;
+            padding: 5px;
+            border: 2px solid #ccc;
+            margin:0px 24px;
+            margin-bottom: 5px;
+            width: 100%;
+            text-align: center;
+            border-radius: 8px;
+            color: black;
+            cursor: pointer;
+            font-size: 20px;
+        }
+        &:hover{
+            
+            i{
+                transition: all 0.3s ease;
+                 background-color: #FF8B04;
+                color: white;
+            }
+        }
+    }
+}

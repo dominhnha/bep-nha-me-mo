@@ -1,0 +1,36 @@
+.Avatar{
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border:1px solid black;
+    //overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin:0px 5px ;
+    img{
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+    &__desc{
+        display: block;
+        max-width: max-content;
+        width: 200px;
+        color: black;
+        visibility: hidden;
+        position: absolute;
+        z-index: 100;
+        top: +100%;
+        padding: 10px 20px;
+        border-radius:8px ;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        transition:  visibility 0.2s ease;
+    }
+    &:hover > &__desc {
+        transition:  visibility 0.5s ease;
+        visibility: visible;
+    }
+}

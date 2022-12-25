@@ -1,0 +1,68 @@
+.ProductCand{
+    overflow: hidden;
+    border-radius: 8px;
+    cursor: pointer;
+    &:hover{
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    }
+    &__top{
+        overflow: hidden;
+        position: relative;
+        height: 352px;
+       
+        z-index: 1;
+    }
+    &__img{
+        position: absolute;
+        z-index: 1;
+        object-fit: cover;
+    }
+    
+    &__content{
+        border-top-right-radius: 50px;
+        background-color: black;
+        position: absolute;
+        z-index: 3;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        color: white;
+        transition: all 0.5s ease;
+    }
+    
+    &__bottom{
+       
+        background-color: rgb(20 19 19);
+        &__warpper{
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 5px 10px;
+        }
+        
+        
+    }
+    
+    &__warpper{
+        height: 0px;
+        padding: 5px 10px;
+    }
+    &__desc{
+        opacity: 0;
+        height: max-content;
+        padding: 2px 5px;
+        font-size: 12px;
+        text-align: justify;
+    }
+    &__content:hover &__warpper{
+        transition:height  0.5s ease;
+        height: max-content;
+    }
+    &__content:hover &__desc{
+        transition: all 1s ease;
+        opacity: 1;
+    }
+    &__content:hover > &__title{
+        white-space: unset;
+    }
+}

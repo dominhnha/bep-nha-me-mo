@@ -1,0 +1,73 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+body {
+  line-height: 1.5;
+}
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+input,
+button,
+textarea,
+select {
+  outline: none;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+a{
+  text-decoration: none;
+}
+li{
+  list-style: none;
+}
+html{
+  
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: #e4e4e4;
+    border-radius: 100px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #3f3f3f;
+    border-radius: 100px;
+  }
+}
+
+.bg--top{
+  position: fixed;
+  top: (0px);
+  left: 0px;
+  z-index: 1;
+  width: 500px;
+  height: 500px;
+}
+.bg--bottom{
+  position: fixed;
+  bottom: (0px);
+  right: 0px;
+  z-index: 1;
+  width: 500px;
+  height: 500px;
+}

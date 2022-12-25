@@ -1,0 +1,21 @@
+@import "../../sass/variables";
+@import "../../sass/mixin";
+
+.Section{
+    margin: 20px 0;
+    padding: 20px;
+    box-shadow: 0 5px 38px -6px rgb(0 0 0 / 14%);
+    border-radius: 10px;
+}
+.Section__title{
+    width: 100%;
+    font-size: 24px;
+    font-weight: 600;
+    color: #000;
+    text-transform: capitalize;
+    box-shadow: rgb(0 0 0 / 16%) 0px 1px 4px;
+    padding: 10px;
+    @include mobile{
+        font-size: 20px;
+    }
+}

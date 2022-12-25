@@ -1,0 +1,43 @@
+.Icon{
+    vertical-align: top;
+    width: 40px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 5px;
+    position: relative;
+    i{
+        display: block;
+        font-size: 25px;
+        color: black;
+
+    }
+    &__quantity{
+        position: absolute;
+        top: -8px;
+        right: 0;
+        width: 20px;
+        height: 20px;
+        border-radius: 100%;
+        background-color: black;
+        color: white;
+
+    }
+    &__desc{
+        background-color: #fff;
+        width: max-content;
+        color: black;
+        visibility: hidden;
+        position: absolute;
+        top: +100%;
+        padding: 10px 20px;
+        border-radius:8px ;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        transition:  visibility 0.2s ease;
+    }
+    &:hover > &__desc {
+        transition:  all 0.1s ease-in;
+        visibility: visible;
+    }
+}

@@ -1,0 +1,151 @@
+@import "../../sass/variables";
+@import "../../sass/mixin";
+@import "../../sass/base";
+.Header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 888;
+    padding: 10px 0;
+    background-color: white;
+    height: $header-height;
+    &__mobile{
+        display: none !important;
+        vertical-align: top;
+        width: 40px;
+        font-size: 25px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 5px;
+        @include tablet{
+            display: block!important ;
+        }
+        
+    }
+    &.active  &__nav{
+        transition: all 0.3s ease;
+        transform: translateX(0);
+    }
+    &__list{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+    }
+    &__logo{
+        a{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        img{
+            max-width: 70px;
+            display: block;
+            @include mobile{
+                max-width: 100px;
+            }
+        }
+        h2{
+            font-size: 20px;
+            font-weight: 550;
+            text-transform: uppercase;
+            color: black;
+        }
+        @include mobile{
+            h2{
+                display: none;
+            }
+        }
+        
+    }
+    &__nav{
+        display: flex;
+        align-items: center;
+        justify-content: stretch;
+        @include tablet{
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            flex-direction: column;
+            padding: 20px 10px;
+            background-color: white;
+            z-index: 999;
+            transform: translateX(+100%);
+            transition: all 0.3s ease;
+        }
+        &__item{
+            // padding: 0 5px;
+            min-width: 127px;
+            display: flex;
+            align-items: center;
+            justify-content: center;;
+            margin: 0 10px;
+            text-transform: uppercase;
+            padding: 5px;
+            border-radius: 8px;
+            a{
+                
+                //font-family:"Roboto";
+                display: block;
+                font-size: 18px;
+                font-weight: 500;
+                text-transform: unset;
+                padding: 10px 5px;
+                color: $primary-color;
+                font-family: inherit;
+            }
+            &:hover a{
+                transition: all 0.5s ease;
+                color: #ccc;
+            }
+        }
+        &__item.active{
+            transition: all 0.3s cubic-bezier(0.18, -0.62, 0, 2.53);
+            box-shadow: rgb(0 0 0 / 25%) -3px 3px 1px 0px;
+        
+            
+            a{
+                //box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;    
+                //font-weight: 600;
+            }
+           
+        }
+        &__icon{
+            display: none !important;
+            position: absolute;
+            top:13px;
+            left: 0;
+            width: 40px;
+            font-size: 50px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 5px;
+            @include tablet{
+                display: block !important;
+            }
+        }
+    }
+    &__user{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        @include tablet{
+            margin-left:auto ;
+        }
+       &__item{
+        list-style: none;
+       }
+    }
+    // &.shrink{
+    //     height: $header-shrink-height;
+    //     padding: 0 ;
+    //     transition: all 0.5s ease;
+    // }
+}
