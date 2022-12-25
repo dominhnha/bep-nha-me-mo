@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkbep_nha_me_mo=self.webpackChunkbep_nha_me_mo||[]).push([[323],{4323:function(e,n,a){a.r(n),a.d(n,{default:function(){return u}});a(2791);var s=a(184),u=function(e){return(0,s.jsx)("div",{className:"backgroud",children:(0,s.jsx)("div",{className:"dashed-loading"})})}}}]);
+//# sourceMappingURL=323.58eacec6.chunk.js.map
