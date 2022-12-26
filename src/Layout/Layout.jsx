@@ -10,6 +10,7 @@ import { CART__SET } from '../reducers/type';
 import { AuthContext } from '../contexts/AuthContextProvider';
 import Admin from '../pages/Private/Admin';
 import { layouts } from 'chart.js';
+import Chatbot from '../components/Chatbot/Chatbot';
 
 const FB = window.FB;
 const Header = React.lazy(() => import('../components/Header/Header'));
@@ -39,25 +40,6 @@ const Layout = props => {
   }, [])
   console.log(Cart)
   //  facebook chat box
-  useEffect(() => {
-    var chatbox = document.getElementById('fb-customer-chat');
-    chatbox.setAttribute("page_id", "110416031802315");
-    chatbox.setAttribute("attribution", "biz_inbox");
-    window.fbAsyncInit = function() {
-      FB.init({
-        xfbml            : true,
-        version          : 'v15.0'
-      });
-    };
-    (function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id;
-      js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-  }, [])
-
   return (
     <BrowserRouter>
       <Suspense fallback={<Loading />}>
@@ -69,20 +51,18 @@ const Layout = props => {
         <main>
           <div className={`App ${Authur.success == true && Authur.payload.user.Role == "Admin" ? "active" : ""}  `}>
             <MainRoutes />
+            
           </div>
           
           
         </main>
-    <div id="fb-root"></div>
-
-    <div id="fb-customer-chat" class="fb-customerchat">
-    </div>
+    
         {
           Authur.success == true && Authur.payload.user.Role == "Admin"
             ? null
             : <Footer />
         }
-
+        <Chatbot/>
       </Suspense>
 
     </BrowserRouter>
