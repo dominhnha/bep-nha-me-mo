@@ -5,7 +5,7 @@ import { AUTH__SET } from '../../reducers/type'
 import { AuthContext } from '../../contexts/AuthContextProvider';
 import { AddUserAuthencation, SiginUserAuthencation } from '../../services/Authencation/Authencation';
 import { async } from '@firebase/util';
-import { AddUserCollection, GetToCart, GetUserCollection, setNewCart } from '../../services/Authencation/User';
+import { AddUserCollection, GetToCart, GetUserCollection, setNewCart, UpdateStaus } from '../../services/Authencation/User';
 import {  GetBestsellProduct, getNewProduct, GetProductById, searchProduct, sortProduct } from '../../services/Product/Product';
 import pattern from '../../assets/Img/pattern.png'
 import object1 from '../../assets/Img/object1.png'
@@ -55,6 +55,7 @@ const Home = props => {
     }
 
   }, [])
+  
   console.log(newProduct)
   return (
     <div className='Home'>

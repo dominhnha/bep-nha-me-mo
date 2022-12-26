@@ -158,6 +158,7 @@ export const AddPurchaseHistoryForUser = async(uid,status,Cart,ListProduct=[{pid
             Payments:Payments,
             FullName:FullName,
             Email:emailOrPhone,
+            Status:"Pending",
         }
         if(status===true){
             

@@ -60,6 +60,7 @@ const MainRoutes = props => {
   return (
     <Routes>
       <Route exact path='/' element={<Home />} />
+      <Route exact path='/bep-nha-me-mo' element={<Home />} />
       {/* product */}
       <Route exact path='/Product'>
         {/* <Route exact index element={<Product />}></Route> */}
