@@ -4,7 +4,7 @@ import "./Contact.scss"
 import BannerImg from '../../assets/Img/bg-home-2.jpg'
 import pattern from '../../assets/Img/pattern.png'
 import object1 from '../../assets/Img/object1.png'
-
+import MinhQuy from '../../assets/Img/MinhQuy.jpg'
 import MinhNhat from '../../assets/Img/AvatarNhat.png'
 import AnhQuyet from '../../assets/Img/QuyetAvatar.jpg'
 import PhongTran from '../../assets/Img/PhongAvatar.jpg'
@@ -72,12 +72,12 @@ const Devolopment = [
 ]
 const Feedback = [
     {
-        Name:"Đỗ Minh Nhật",
-        Img:MinhNhat,
+        Name:"Dương Minh Quý",
+        Img:MinhQuy,
         Comment:"Lorem, ipsum dolor sit, amet consectetur adipisicing elit. Autem neque, accusantium, ex exercitationem vero distinctio et quaerat non, quod placeat, obcaecati consectetur"
     },
     {
-        Name:"Trần Anh Quyết",
+        Name:"Lê Minh Trí",
         Img:AnhQuyet,
         Comment:"Lorem, ipsum dolor sit, amet consectetur adipisicing elit. Autem neque, accusantium, ex exercitationem vero distinctio et quaerat non, quod placeat, obcaecati consectetur"
     },
@@ -98,7 +98,7 @@ const Contact = props => {
             <div className="About__banner">
                     <img src={BannerImg} alt="" />
                     <div className="About__content">
-                        <h2>Bếp Nhà Mẹ Mở</h2>
+                        <h2>Bếp Nhà Mẹ Mỡ</h2>
                     </div>
             </div>
             <div className="About__about">

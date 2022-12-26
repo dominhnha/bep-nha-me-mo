@@ -9,6 +9,13 @@
             min-width: 100%;
         }
     }
+    &__date{
+        border: none;
+        padding: 0px 10px;
+        background-color: transparent;
+        font-size: 16px;
+        font-weight: 400;
+    }
     &__Product{
         display: flex;
         align-items: stretch;

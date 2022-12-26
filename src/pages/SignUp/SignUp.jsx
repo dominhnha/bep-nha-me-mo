@@ -8,9 +8,12 @@ import { Link,useNavigate } from 'react-router-dom';
 
 import { AddUserAuthencation } from '../../services/Authencation/Authencation';
 import { AddUserCollection } from '../../services/Authencation/User';
+import CustomInput from '../../components/FieldCustom/CustomInput/CustomInput';
+import { toast } from 'react-toastify';
 const SignUp = props => {
   const history = useNavigate();
   const formik = useFormik({
+    enableReinitialize: true,
     initialValues: {
       firstname: "",
       lastname: "",
@@ -49,11 +52,29 @@ const SignUp = props => {
           if(initUser.success){
             history("/Account/SignIn")
           }else{
-            history("/404")
+            toast.error('🦄 không tạo được tài khoản vui lòng thử lại', {
+              position: "top-right",
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "light",
+              });
           }
         }
       }catch{
-        history("/404")
+        toast.error('🦄 không tạo được tài khoản vui lòng thử lại', {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          });
       }
       
       
@@ -70,72 +91,62 @@ const SignUp = props => {
           </Link>
           <div class="tab-item active">Đăng ký</div>
         </div>
-        <div className="input-container">
-            <input 
-              id = "firstname"
-              name = "firstname"
-              type="text"
-              onChange = {formik.handleChange}
-              onBlur = {formik.handleBlur}
-              value={formik.values.firstname}
-              required
-            />
-            <label className='border-null'>Họ Đệm</label>
-           {formik.touched.firstname && formik.errors.firstname ?  <p className="error-message active">{formik.errors.firstname}</p> : null}   
-        </div>
-        <div className="input-container">
-          <input 
-              id = "lastname"
-              name = "lastname"
-              type="text"
-              onChange = {formik.handleChange}
-              onBlur = {formik.handleBlur}
-              value={formik.values.lastname}
-              required
-            />
-            <label className='border-null'>Tên</label>
-           {formik.touched.lastname && formik.errors.lastname ?  <p className="error-message active">{formik.errors.lastname}</p> : null}
-        </div>
+        <CustomInput
+          id={"firstname"}
+          name={"firstname"}
+          type={"text"}
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          value={formik.values.firstname}
+          errormessage={formik.errors.firstname}
+          touchedForm={formik.touched.firstname}
+          lable={"Họ"}
+        />
+        <CustomInput
+          id={"lastname"}
+          name={"lastname"}
+          type={"text"}
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          value={formik.values.lastname}
+          errormessage={formik.errors.lastname}
+          touchedForm={formik.touched.lastname}
+          lable={"Tên"}
+        />
+        <CustomInput
+          id={"emailOrPhoneNumber"}
+          name={"emailOrPhoneNumber"}
+          type={"text"}
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          value={formik.values.emailOrPhoneNumber}
+          errormessage={formik.errors.emailOrPhoneNumber}
+          touchedForm={formik.touched.emailOrPhoneNumber}
+          lable={"Email"}
+        />
+        <CustomInput
+          id={"password"}
+          name={"password"}
+          type={"password"}
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          value={formik.values.password}
+          errormessage={formik.errors.password}
+          touchedForm={formik.touched.password}
+          lable={"Mật khẩu"}
+        />
+        <CustomInput
+          id={"reEnterPassword"}
+          name={"reEnterPassword"}
+          type={"password"}
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          value={formik.values.reEnterPassword}
+          errormessage={formik.errors.reEnterPassword}
+          touchedForm={formik.touched.reEnterPassword}
+          lable={"Nhập lại mật khẩu"}
+        />
         
-        <div className="input-container">
-          <input 
-            id = "emailOrPhoneNumber"
-            name = "emailOrPhoneNumber"
-            type="text"
-            onChange = {formik.handleChange}
-            onBlur = {formik.handleBlur}
-            value={formik.values.emailOrPhoneNumber}
-            required
-          />
-          <label className='border-null'>Email / Số điện thoại</label>
-          {formik.touched.emailOrPhoneNumber && formik.errors.emailOrPhoneNumber ?  <p className="error-message active">{formik.errors.emailOrPhoneNumber}</p> : null}
-        </div>
-        <div className="input-container">
-          <input 
-            id = "password"
-            name = "password"
-            type="password"
-            onChange = {formik.handleChange}
-            onBlur = {formik.handleBlur}
-            value={formik.values.password}
-            required
-          />
-          <label className='border-null'>Mật Khẩu</label>
-          {formik.touched.password && formik.errors.password ?  <p className="error-message active">{formik.errors.password}</p> : null}
-        </div>
-        <div className="input-container">
-          <input 
-            id = "reEnterPassword"
-            name = "reEnterPassword"
-            type="password"
-            onChange = {formik.handleChange}
-            onBlur = {formik.handleBlur}
-            value={formik.values.reEnterPassword}
-            required
-          />
-          <label className='border-null'>Nhập lại mật khẩu</label>
-          {formik.touched.reEnterPassword && formik.errors.reEnterPassword ?  <p className="error-message active">{formik.errors.reEnterPassword}</p> : null}
-        </div>
         <button type="submit">Đăng Ký</button>
         <div className="forget-password">
           <a href="#">Bạn quên mật khẩu?</a>
