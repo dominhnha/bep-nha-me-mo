@@ -6,7 +6,8 @@ import { useRef } from 'react';
 
 const ButtonQuantity = props => {
     
-    const quantity = props.quantity ? props.quantity : 1;
+    const quantity = props.quantity ? props.quantity : null;
+
     const setQuantity = props.setQuantity ? props.setQuantity : null;
     // quantity
     const decrease = (e)=>{
@@ -15,18 +16,22 @@ const ButtonQuantity = props => {
     }
     const increase = (e)=>{
         e.preventDefault() 
-        setQuantity(quantity + 1)
+        console.log(quantity)
+        setQuantity(+quantity >= 1000 ? +quantity :  Number(+quantity + 1) )
     }
     //preventDefault
     const refButtonQuantity = useRef(null);
-    console.log(refButtonQuantity)
-  return (
+    console.log("quantity", typeof( quantity))
+    return (
     <div className='ButtonQuantity' ref={refButtonQuantity}>
         <div className="ButtonQuantity__decrease " onClick={(e)=>decrease(e)}>
             <i class='bx bx-message-square-minus'></i>
         </div>
         <div className="ButtonQuantity__content ">
-                 {quantity}   
+                 {/* {quantity} */}
+                 <input type="number" 
+                    onChange={(e)=>setQuantity(e.target.value)} 
+                    value={quantity} />   
         </div>
         <div className="ButtonQuantity__increase " onClick={(e)=>increase(e)}>
             <i className='bx bx-message-square-add'></i>

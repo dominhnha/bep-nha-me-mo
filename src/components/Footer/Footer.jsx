@@ -12,11 +12,11 @@ function Footer(props) {
   const navLink = [
     {
       title: 'Tìm kiếm',
-      path:"/search",
+      path:"/Product/Search",
     },
     {
       title: 'Giới thiệu',
-      path:"/review",
+      path:"/Contact",
     }
     ,{
       title: 'Chính sách đổi trả',

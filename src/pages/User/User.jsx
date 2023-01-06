@@ -25,7 +25,7 @@ const User = props => {
             <div className="User__siderBar">
                 <ul className="User__navication">
                     <div className="User__title">
-                        <h2>Minh Nhật</h2>
+                        <h2>{Authur.payload.user.FullName}</h2>
                          {/* <p>Minhnhat@11</p> */}
                     </div>
                     <li className={`User__item`}>

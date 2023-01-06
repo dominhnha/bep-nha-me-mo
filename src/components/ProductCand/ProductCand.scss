@@ -12,6 +12,7 @@
         position: relative;
         height: 352px;
         z-index: 1;
+        background-color: #F8F4EA;
     }
     &__img{
         position: absolute;
@@ -58,7 +59,7 @@
     
     &__bottom{
        
-        //background-color: #ff8b04 !important;
+        background-color: #E1D7C6 !important;
         &__warpper{
             display: flex;
             align-items: center;
@@ -72,7 +73,7 @@
         font-size: medium;
     }
     &__price--sale{
-        color: #fff;
+        color: #ff8b04;
         font-weight: 600;
         text-decoration: line-through;
     }

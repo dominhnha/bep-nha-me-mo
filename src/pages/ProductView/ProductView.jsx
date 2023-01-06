@@ -43,7 +43,7 @@ const ProductView = props => {
   const [quantity, setQuantity] = useState(1);
   const [product, setProduct] = useState(null);
   const [Classify, setClassify] = useState([]);
-
+  console.log("rerendering...")
   // get Slug by Url
   const { slug } = useParams();
   useEffect(() => {
