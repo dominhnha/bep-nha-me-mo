@@ -1,4 +1,4 @@
-import {  arrayRemove, arrayUnion, collection, doc, getDoc, getDocs, setDoc, updateDoc, Timestamp } from 'firebase/firestore'
+import { arrayRemove, arrayUnion, collection, doc, getDoc, getDocs, setDoc, updateDoc, Timestamp } from 'firebase/firestore'
 import { db } from '../../Firebase__config'
 import { GetAllProduct, GetNameProduct } from '../Product/Product'
 
@@ -15,26 +15,6 @@ const docRef = doc(db, CollectionName, revID, subName, subID);
 Add RevenuePerMonth
 */
 
-export const AddRevenuePerMonth = async () => {
-
-    const newRev = {
-        Item: [],
-        TotalQuantitySold: ""
-    }
-
-    function surprise() {
-        (function loop(AddRevenuePerMonth) {
-            var now = new Date();
-            if (now.getDate() === 1 && now.getHours() === 0 && now.getMinutes() === 0) {
-                setDoc(docRef, newRev);
-            }
-            now = new Date();                  // allow for time passing
-            var delay = 60000 - (now % 60000); // exact ms to next minute interval
-            setTimeout(loop, delay);
-        })();
-    }
-    return surprise();
-}
 export const AddProductToRevenue = async (pid, quantity) => {
     const NameProduct = await GetNameProduct(pid);
     const initProduct = {
@@ -63,13 +43,13 @@ export const AddProductToRevenue = async (pid, quantity) => {
     await updateDoc(docRef, {
         QuantitySold: QuantitySold
     })
+
 }
 
+
 export const RevenuePerMonth = async () => {
-    const docsSnap = await getDocs(collection(db, "PurchaseHistory"))
+    const docsSnap = await getDocs(collection(db, "PurchaseHistory"));
     const ListPurchase = [];
-    const month = Now.getMonth() + 1;
-    const year = Now.getFullYear();
     docsSnap.forEach(doc => {
         ListPurchase.push({
             PurId: doc.id,
@@ -78,8 +58,17 @@ export const RevenuePerMonth = async () => {
             Item: doc.data().Item
         })
     })
+    const month = Now.getMonth() + 1;
+    const year = Now.getFullYear();
     const ListProduct = await (await GetAllProduct()).payload;
     const ListItem = [];
+    const docSnap = await getDoc(docRef);
+    if (!docSnap.exists()) {
+        await setDoc(docRef, {
+            Item: [],
+            QuantitySold: 0
+        })
+    }
     for (let i = 0; i < ListPurchase.length; i++) {
         if (month === ListPurchase[i].Month && year === ListPurchase[i].Year) {
             ListItem.push(ListPurchase[i].Item);
@@ -88,7 +77,6 @@ export const RevenuePerMonth = async () => {
     const flatValues = ListItem.reduce((total, value) => {
         return total.concat(value);
     }, []);
-
     for (let i = 0; i < ListProduct.length; i++) {
         let total = 0;
         for (let j = 0; j < flatValues.length; j++) {
@@ -98,13 +86,15 @@ export const RevenuePerMonth = async () => {
             }
 
         }
-        await AddProductToRevenue(ListProduct[i].Pid, total);
 
+        await AddProductToRevenue(ListProduct[i].Pid, total);
     }
+
 }
 
+
 export const GetQuantitySoldProductOrMonth = async (pid, month, year) => {
-    try{
+    try {
         if (month >= 1 && month <= 12) {
             const date = new Date(year, month - 1);
             const dateM = date.toLocaleString("en", { month: "long" });
@@ -114,10 +104,10 @@ export const GetQuantitySoldProductOrMonth = async (pid, month, year) => {
             const docRefQuan = doc(db, CollectionName, revID, querySubName, querySubNameID);
             const docSnap = await getDoc(docRefQuan);
             if (docSnap.exists()) {
-                console.log("2",docSnap.data())
+                console.log("2", docSnap.data())
                 let total = 0;
-                docSnap.data().Item.map(item=>{
-                    if(item.Pid === pid){
+                docSnap.data().Item.map(item => {
+                    if (item.Pid === pid) {
                         total += item.QuantitySold;
                     }
                 })
@@ -133,7 +123,7 @@ export const GetQuantitySoldProductOrMonth = async (pid, month, year) => {
                     payload: "No such document!"
                 }
             }
-    
+
         }
         else {
             return {
@@ -145,10 +135,10 @@ export const GetQuantitySoldProductOrMonth = async (pid, month, year) => {
             success: false,
             payload: 0
         }
-    }catch(err){
+    } catch (err) {
         console.log(err);
     }
-    
+
 }
 // get total number 
 export const GetTotalQuantitySoldOrMonth = async (month, year) => {

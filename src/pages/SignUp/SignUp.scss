@@ -40,6 +40,13 @@ button[type="submit"]{
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
+    color: rgb(255, 255, 255);
+    background-color: $primary-bg;
+&:hover{
+    transition: all 0.5s ease;
+    background-color: $secondary-color;
+    color: black;
+}
 
 }
 a{
@@ -73,4 +80,14 @@ a{
     align-items: center;
     justify-content: center;
     border-radius: inherit;
+}
+.forget-password {
+    margin-top: 13px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 16px;
+    a{
+        color: black;
+
+    }
 }

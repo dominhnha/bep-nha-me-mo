@@ -2,7 +2,8 @@ import {
     createUserWithEmailAndPassword, 
     getAuth, 
     signInWithEmailAndPassword, 
-    signOut 
+    signOut ,
+    signInWithCustomToken
    } from "firebase/auth";
 
 import {auth} from '../../Firebase__config' 

@@ -1,0 +1,57 @@
+@import "../../sass/variables";
+@import "../../sass/mixin";
+@import "../../sass/base";
+
+.UserHistory{
+    &__list{
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        padding: 5px;
+        border-radius: 8px;
+        min-height: 60vh;
+    }
+}
+
+.UserHistoryItem{
+    padding: 10px;
+   
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    margin-bottom: 10px;
+   
+    &__id,&__time,&__total,&__total,&__status{
+        width: 14.9999999999999%;
+        text-transform: uppercase;
+        font-weight: 600;
+        display: flex;
+        cursor: default;
+        @include mobile{
+            width: 40%;
+        }
+    }
+    &__header{
+        display: flex;
+        align-items: center;
+    }
+    &__id{
+        min-width: 50%;
+        @include mobile{
+            display: none;
+        }
+    }
+    &__time{
+        input{
+            border: none;
+            outline: none;
+        }
+    }
+    &__total{
+
+    }
+    &__status{
+
+    }
+    &__drop{
+        i{
+            cursor: pointer;
+        }
+    }
+}

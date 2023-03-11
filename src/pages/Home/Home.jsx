@@ -18,6 +18,7 @@ import { Link } from 'react-router-dom';
 import ComponentLoading from '../../components/LoadingSkeleton/ComponentLoading/ComponentLoading';
 import Section from '../../components/Section/Section'
 import "./Home.scss"
+import { GetPurchaseHistoryByUser } from '../../services/Authencation/PurchaseHistory';
 const Home = props => {
 
   const { Authur, dispatch } = useContext(AuthContext);

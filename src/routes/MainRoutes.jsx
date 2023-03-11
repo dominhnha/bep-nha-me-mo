@@ -4,13 +4,6 @@ import { Route, Routes } from 'react-router-dom'
 import { useContext } from 'react'
 import { AuthContext } from '../contexts/AuthContextProvider'
 
-
-
-
-
-
-
-
 // import Components
 
 
@@ -32,7 +25,7 @@ const Chart= React.lazy(() => import('../components/Chart/Charts'))
 const AddProduct = React.lazy(() => import('../components/AddProduct/AddProduct'))
 const User = React.lazy(() => import('../pages/User/User'))
 const UserProfile = React.lazy(() => import( '../components/UserProfile/UserProfile'))
-
+const UserHistory = React.lazy(() => import('../components/UserHistory/UserHistory'))
 
 
 const MainRoutes = props => {
@@ -48,15 +41,7 @@ const MainRoutes = props => {
       </Routes>
     )
   }
-  // return(   
-  //   <Routes>
-  //      <Route exact path='/' element={<Admin/>} >
-  //         <Route exact index element={<Chart/>}></Route>
-  //         <Route exact path='Product' element={<AddProduct/>}></Route>
-  //      </Route>
-  //<Route  path='*' element={<Error/>}></Route>
-  //   </Routes> 
-  //   )
+  
   return (
     <Routes>
       <Route exact path='/' element={<Home />} />
@@ -83,6 +68,7 @@ const MainRoutes = props => {
       {/* user page */}
       <Route exact path='User' element={<User/>}>
         <Route exact index element={<UserProfile/>}></Route>
+        <Route exact path='History' element={<UserHistory/>}></Route>
       </Route>
       <Route path='*' element={<Error />}></Route>
     </Routes>

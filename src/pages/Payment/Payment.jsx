@@ -71,19 +71,6 @@ const Payment = props => {
       async (values) => {
         try {
           console.log(values.emailOrPhoneNumber, values.address, values.delivery)
-          // if( values.address.trim() ==""){
-          //   toast.error('Vui lòng kiểm tra lại số điện thoại hoặc địa chỉ', {
-          //     position: "top-right",
-          //     autoClose: 5000,
-          //     hideProgressBar: false,
-          //     closeOnClick: true,
-          //     pauseOnHover: true,
-          //     draggable: true,
-          //     progress: undefined,
-          //     theme: "light",
-          //   });
-          //   return;
-          // }
           let total = 0;
           const initCart = Payment.payload.map(item => {
             const tmp = Number(item.Price) * Number(item.Quantity)
@@ -114,16 +101,16 @@ const Payment = props => {
           total = total * (1 - discount);
           // user login
           if (Authur.success == true && Payment.success == true) {
+            console.log("value",values)
+            // console.log("s", Authur.payload.uid, {
+            //   emailOrPhone: values.emailOrPhone,
+            //   Address: values.address,
+            //   Total: total,
+            //   PriceDiscount: discount,
+            //   FullName: Authur.payload.user.FullName,
+            //   Payments: values.delivery
 
-            console.log("s", Authur.payload.uid, {
-              emailOrPhone: values.emailOrPhoneNumber,
-              Address: values.address,
-              Total: total,
-              PriceDiscount: discount,
-              FullName: Authur.payload.user.FullName,
-              Payments: values.delivery
-
-            }, initCart)
+            // }, initCart)
             await AddPurchaseHistoryForUser(Authur.payload.uid, true, {
               emailOrPhone: values.emailOrPhoneNumber,
               Address: values.address,
@@ -131,12 +118,12 @@ const Payment = props => {
               PriceDiscount: discount,
               FullName: Authur.payload.user.FullName,
               Payments: values.delivery
-
             }, initCart)
 
           } else {
             // authr false code here 
             const user = v4()
+           
             await AddPurchaseHistoryForUser(user, false, {
               emailOrPhone: `${values.emailOrPhoneNumber}`,
               Address: values.address,

@@ -27,8 +27,18 @@
 button[type="submit"]{
     max-width: 500px;
     height: 53px;
-    background-color: $secondary-color;
-    border-radius: 4px;
+   
+    border-radius: 8px;
     font-size: 16px;
     font-weight: bold;
+    padding: 10px 20px;
+    cursor: pointer;
+
+    color: rgb(255, 255, 255);
+        background-color: $primary-color;
+    &:hover{
+        transition: all 0.5s ease;
+        background-color: $secondary-color;
+        color: black;
+    }
 }

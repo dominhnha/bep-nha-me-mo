@@ -285,7 +285,7 @@ const Search = props => {
                           key={index}
                           onClick={()=>handleClassify(item.payload,item.title)}
                         >
-                          <img  src={item.image} alt="" />
+                          <img  src={item.image} alt="" loading='lazy' />
                           <h2>{item.title}</h2>
                         </div>
                       )
