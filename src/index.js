@@ -10,6 +10,7 @@ import Layout from './Layout/Layout';
 import AuthurProvider from './contexts/AuthContextProvider'
 import CartProvider from './contexts/CartContextProvider';
 import PaymentProvider from './contexts/PaymentContextProvider';
+import AuthurLayout from './Layout/AuthurLayout';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 
@@ -19,9 +20,10 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
         <AuthurProvider>
           <CartProvider>
             <PaymentProvider>
-              <Layout />
+              <AuthurLayout>
+                <Layout/>
+              </AuthurLayout>
               <ToastContainer />
-             
             </PaymentProvider>
           </CartProvider>
         </AuthurProvider>

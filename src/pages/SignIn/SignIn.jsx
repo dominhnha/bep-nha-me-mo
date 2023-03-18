@@ -14,6 +14,8 @@ import { toast } from 'react-toastify';
 const SignIn = (props) => {
   const history = useNavigate();
   const { Authur, dispatch } = useContext(AuthContext);
+
+  console.log("Au",Authur)
   const formik = useFormik({
     enableReinitialize: true,
     initialValues: {
@@ -34,7 +36,7 @@ const SignIn = (props) => {
           email: emailOrPhoneNumber,
           password: password,
         });
-        console.log(uid.payload)
+        console.log("User", uid.payload)
         if (uid.success) {
           const initUser = await GetUserCollection(uid.payload.uid);
           if (initUser.success) {
