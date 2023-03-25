@@ -20,7 +20,6 @@ import Section from '../../components/Section/Section'
 import "./Home.scss"
 import { GetPurchaseHistoryByUser } from '../../services/Authencation/PurchaseHistory';
 const Home = props => {
-
   const { Authur, dispatch } = useContext(AuthContext);
   const [newProduct, setNewProduct] = useState([]);
   const [bestSale, setBestSale] = useState([]);
