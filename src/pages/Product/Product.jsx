@@ -71,23 +71,16 @@ const Product = props => {
    const [Sort,SetSort] = useState("asc")
    const [Classify,SetClassify] = useState(null)
   //  ------------------------Post------------------------
-   const [posts, setPosts] = useState([]); // product aray
+   const [posts, setPosts] = useState([]); // product  aray mang hien tai 
    const [loading, setLoading] = useState(false);
-   const [currentPage, setCurrentPage] = useState(1);
-   const [postsPerPage] = useState(12);
+   const [currentPage, setCurrentPage] = useState(1);// so trang hien tai 
+   const [postsPerPage] = useState(12);// max so luong san pham 
 
-   const [currentPosts , setCurrentPosts] = useState([]) //post Array
+   const [currentPosts , setCurrentPosts] = useState([]) //post Array trang muon render ra 
    const [lenghtPage,setLeghtPage] = useState(0)
   //  -----------------------search--------------------------
    const [search,setSearch] = useState(null);
 
-  //  const handleSetSort = useCallback((value)=>{
-  //     SetSort(value)
-  //  },[])
-
-  //  const handleSetClassify = useCallback((value)=>{
-  //     SetClassify(value)
-  //  },[])
    // caculater render array 
    const hanleCurrentPosts = (Products)=>{
     const indexOfLastPost = Number(currentPage * postsPerPage);
@@ -121,7 +114,7 @@ const Product = props => {
 
     fetchPosts();
   }, []);
-  // setNewPort
+  // ----------------------setNewPort
   useEffect(()=>{
     hanleCurrentPosts(posts)
     setLeghtPage(Math.ceil(posts.length/postsPerPage))

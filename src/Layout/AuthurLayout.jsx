@@ -46,18 +46,18 @@ const AuthurLayout = props => {
                             }
                         }) 
                     }else {
-                        console.log("Log outs")
-                        await handleSiginOut();
-                        toast.error('🦄Vui lòng đăng kí tài khoảng', {
-                            position: "top-right",
-                            autoClose: 5000,
-                            hideProgressBar: false,
-                            closeOnClick: true,
-                            pauseOnHover: true,
-                            draggable: true,
-                            progress: undefined,
-                            theme: "light",
-                        });
+                        // console.log("Log outs")
+                        // await handleSiginOut();
+                        // toast.error('🦄Vui lòng đăng kí tài khoảng', {
+                        //     position: "top-right",
+                        //     autoClose: 5000,
+                        //     hideProgressBar: false,
+                        //     closeOnClick: true,
+                        //     pauseOnHover: true,
+                        //     draggable: true,
+                        //     progress: undefined,
+                        //     theme: "light",
+                        // });
                     }
 
                 } else {

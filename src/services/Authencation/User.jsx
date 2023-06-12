@@ -7,16 +7,17 @@ const CollectionName = "User"
 
 
 export const AddUserCollection = async(uid,newUser)=>{
-    const {Email,firstname,lastname} = newUser;
+    const {Email,firstname,lastname ,photoURL} = newUser;
     const initUser = {
         Email:Email,
         Address:"",
         Number:"",
-        ImgUser:"https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/36015793570193.5e6c1151cb04b.png",
+        ImgUser:photoURL ? photoURL :"https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/36015793570193.5e6c1151cb04b.png",
         FullName:`${firstname} ${lastname}`,
         Birthdate:"",
         Role:"user",
     }    
+    console.log(initUser)
     return await setDoc(doc(db, CollectionName, uid), initUser)
     .then(e=>{
         return {

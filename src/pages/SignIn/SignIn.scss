@@ -2,67 +2,63 @@
 @import "../../sass/variables";
 @import "../../sass/base";
 .center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    //padding: 40px;
-    @include mobile{
-        
-        padding: 0 10px;
-    }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  //padding: 40px;
+  @include mobile {
+    padding: 0 10px;
+  }
 }
 
-.center h1{
-    text-align: center;
-    padding:1px 0 64px 0;
-    font-size: 33px;
-    font-weight:700;
+.center h1 {
+  text-align: center;
+  padding: 1px 0 64px 0;
+  font-size: 33px;
+  font-weight: 700;
 }
 
 .sign-in-form {
-    max-width: 500px;
+  max-width: 500px;
+  width: 100%;
+  @include mobile {
     width: 100%;
-    @include mobile{
-        width: 100%;
-    }
+  }
 }
 
-button[type="submit"]{
-    width: 100%;
-    height: 53px;
-    background-color: $secondary-color;
-    border-radius: 4px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
+button[type="submit"] {
+  width: 100%;
+  height: 53px;
+  background-color: $secondary-color;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
 
-    color: rgb(255, 255, 255);
-    background-color: $primary-bg;
-    &:hover{
+  color: rgb(255, 255, 255);
+  background-color: $primary-bg;
+  &:hover {
     transition: all 0.5s ease;
     background-color: $secondary-color;
     color: black;
-}
-
-    
+  }
 }
 .forget-password {
-    margin-top: 13px;
-    cursor: pointer;
-    text-align: center;
-    font-size: 16px;
-    
+  margin-top: 13px;
+  cursor: pointer;
+  text-align: center;
+  font-size: 16px;
 }
 .forget-password a {
-    color: $primary-color;
+  color: $primary-color;
 }
 
-.forget-password:hover{
-    text-decoration: underline;
+.forget-password:hover {
+  text-decoration: underline;
 }
-a{
-    display: block;
+a {
+  display: block;
 }
 .tabs {
   display: flex;
@@ -80,16 +76,61 @@ a{
 }
 
 .tabs .tab-item {
-    background-color: transparent;
-    width: 50%;
-    white-space: nowrap;
-    padding: 10px 15px;
-    cursor: pointer;
-    color: #999;
-    font-weight: 500;
-    flex: 1;
+  background-color: transparent;
+  width: 50%;
+  white-space: nowrap;
+  padding: 10px 15px;
+  cursor: pointer;
+  color: #999;
+  font-weight: 500;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: inherit;
+}
+.sign-in {
+  &__warpper {
     display: flex;
-    align-items: center;
     justify-content: center;
-    border-radius: inherit;
+    align-items: center;
+    gap: 10;
+
+    span {
+      width: 30%;
+      height: 1px;
+      display: block;
+      background-color: black;
+    }
+    p {
+      padding: 10px 20px;
+
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 19px;
+    }
+  }
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #000000;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  margin: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  &:hover {
+    background-color: #ff8b04;
+    color: white;
+    transition: all 0.3s ease;
+  }
 }
